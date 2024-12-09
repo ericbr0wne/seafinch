@@ -1,60 +1,79 @@
-using System.Text.Json; // Prefer System.Text.Json for performance
+using System.Xml.Serialization;
 using api.Models;
 
-namespace api.Services;
-public class SmhiService
+namespace api.Services
 {
-    private readonly HttpClient _httpClient;
-    private readonly ILogger<SmhiService> _logger;
-
-    public SmhiService(HttpClient httpClient, ILogger<SmhiService> logger)
+    public class SmhiService
     {
-        _httpClient = httpClient;
-        _logger = logger;
-    }
+        private readonly HttpClient _httpClient;
+        private readonly ILogger<SmhiService> _logger;
 
-    public async Task<OceanographyParameter> GetOceanographyAsync()
+        public SmhiService(HttpClient httpClient, ILogger<SmhiService> logger)
+        {
+            _httpClient = httpClient;
+            _logger = logger;
+        }
+
+        public async Task<SmhiData> GetOceanoParametersAsync()
+        {
+            try
+            {
+                string url = "https://opendata-download-ocobs.smhi.se/api"; // Hardcoded URL
+
+                var response = await _httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                var xmlContent = await response.Content.ReadAsStringAsync();
+                var serializer = new XmlSerializer(typeof(SmhiData));
+
+                // Create a new XmlSerializerNamespaces instance to handle XML namespaces
+                var namespaces = new XmlSerializerNamespaces();
+                namespaces.Add("", "http://www.w3.org/2005/Atom"); // Add Atom namespace
+
+                using (var reader = new StringReader(xmlContent))
+                {
+                    return (SmhiData)serializer.Deserialize(reader);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle or log exceptions
+                _logger.LogError(ex, "Error fetching or deserializing SMHI data.");
+                throw new InvalidOperationException("Error fetching or deserializing SMHI data.", ex);
+            }
+        }
+
+    }
+}
+
+
+/*     public async Task<OceanoParameters> GetOceanographyAsync()
     {
         try
         {
-            string url = " https://opendata-download-ocobs.smhi.se/api";
+            string url = "https://opendata-download-ocobs.smhi.se/api";
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
 
-            string jsonData = await response.Content.ReadAsStringAsync();
-            _logger.LogInformation("Oceanography data fetched successfully.");
-
-            var parameter = JsonSerializer.Deserialize<OceanographyParameter>(jsonData, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-
-            return parameter!;
+            var stream = await response.Content.ReadAsStreamAsync();
+            var serializer = new XmlSerializer(typeof(OceanoParameters)); 
+            return (OceanoParameters)serializer.Deserialize(stream);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error fetching oceanography data.");
             throw;
         }
-    }
-
-    public async Task<OceanographyParameter?> GetOceanographyParameterAsync(string key)
+    } */
+/* 
+    public async Task<OceanoParameters?> GetOceanographyParameterAsync(string key)
     {
         try
         {
-            var parameter = await GetOceanographyAsync();
+           var data = await GetOceanographyAsync();
 
-            if (parameter?.Key == key)
-            {
-                return parameter;
-            }
-            var matchingStationSet = parameter?.StationSet
-                .FirstOrDefault(stationSet => stationSet.Key == key);
-
-            if (matchingStationSet != null)
-            {
-                return parameter;
-            }
+            // Replace with actual property to filter by key
+            return data.OceanoParameters.FirstOrDefault(p => p.Key == key);
 
             return null;
         }
@@ -63,6 +82,5 @@ public class SmhiService
             _logger.LogError(ex, "Error fetching oceanography parameter.");
             throw;
         }
-    }
+    } */
 
-}

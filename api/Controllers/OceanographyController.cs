@@ -16,7 +16,27 @@ public class OceanographyController : ControllerBase
         _logger = logger;
     }
 
+
+
     [HttpGet("oceano")]
+    public async Task<IActionResult> GetOceanoParameters()
+    {
+        try
+        {
+            var oceanoParameters = await _smhiService.GetOceanoParametersAsync();
+            return Ok(oceanoParameters);
+        }
+        catch (Exception ex)
+        {
+            // Log error (optional)
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+}
+
+
+
+/*     [HttpGet("oceano")]
     public async Task<IActionResult> GetOceanography()
     {
         try
@@ -28,8 +48,8 @@ public class OceanographyController : ControllerBase
         {
             return BadRequest("Failed to fetch data from SMHI");
         }
-    }
-
+    } */
+/* 
     [HttpGet("parameter/{key}")]
     public async Task<IActionResult> GetOceanographyParameter(string key)
     {
@@ -50,6 +70,4 @@ public class OceanographyController : ControllerBase
             _logger.LogError(ex, "Error fetching oceanography parameter.");
             return BadRequest($"Failed to fetch data from SMHI: {ex.Message}");
         }
-    }
-}
-
+    } */

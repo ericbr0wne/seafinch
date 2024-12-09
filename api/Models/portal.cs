@@ -20,68 +20,84 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd", IsNullable=false)]
-public partial class api {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd", IsNullable = false)]
+public partial class SmhiData
+{
+
     private System.DateTime updatedField;
-    
+
     private string titleField;
-    
+
     private string summaryField;
-    
+
     private linkType[] linkField;
-    
+
     private linksType[] categoryField;
-    
+
     /// <remarks/>
-    public System.DateTime updated {
-        get {
+    public System.DateTime updated
+    {
+        get
+        {
             return this.updatedField;
         }
-        set {
+        set
+        {
             this.updatedField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string title {
-        get {
+    public string title
+    {
+        get
+        {
             return this.titleField;
         }
-        set {
+        set
+        {
             this.titleField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string summary {
-        get {
+    public string summary
+    {
+        get
+        {
             return this.summaryField;
         }
-        set {
+        set
+        {
             this.summaryField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("link")]
-    public linkType[] link {
-        get {
+    public linkType[] link
+    {
+        get
+        {
             return this.linkField;
         }
-        set {
+        set
+        {
             this.linkField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("category")]
-    public linksType[] category {
-        get {
+    public linksType[] category
+    {
+        get
+        {
             return this.categoryField;
         }
-        set {
+        set
+        {
             this.categoryField = value;
         }
     }
@@ -92,44 +108,54 @@ public partial class api {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-public partial class linkType {
-    
+[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+public partial class linkType
+{
+
     private string relField;
-    
+
     private string typeField;
-    
+
     private string hrefField;
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string rel {
-        get {
+    public string rel
+    {
+        get
+        {
             return this.relField;
         }
-        set {
+        set
+        {
             this.relField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string type {
-        get {
+    public string type
+    {
+        get
+        {
             return this.typeField;
         }
-        set {
+        set
+        {
             this.typeField = value;
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-    public string href {
-        get {
+    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+    public string href
+    {
+        get
+        {
             return this.hrefField;
         }
-        set {
+        set
+        {
             this.hrefField = value;
         }
     }
@@ -140,53 +166,66 @@ public partial class linkType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-public partial class geoBox {
-    
+[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+public partial class geoBox
+{
+
     private double minLatitudeField;
-    
+
     private double minLongitudeField;
-    
+
     private double maxLatitudeField;
-    
+
     private double maxLongitudeField;
-    
+
     /// <remarks/>
-    public double minLatitude {
-        get {
+    public double minLatitude
+    {
+        get
+        {
             return this.minLatitudeField;
         }
-        set {
+        set
+        {
             this.minLatitudeField = value;
         }
     }
-    
+
     /// <remarks/>
-    public double minLongitude {
-        get {
+    public double minLongitude
+    {
+        get
+        {
             return this.minLongitudeField;
         }
-        set {
+        set
+        {
             this.minLongitudeField = value;
         }
     }
-    
+
     /// <remarks/>
-    public double maxLatitude {
-        get {
+    public double maxLatitude
+    {
+        get
+        {
             return this.maxLatitudeField;
         }
-        set {
+        set
+        {
             this.maxLatitudeField = value;
         }
     }
-    
+
     /// <remarks/>
-    public double maxLongitude {
-        get {
+    public double maxLongitude
+    {
+        get
+        {
             return this.maxLongitudeField;
         }
-        set {
+        set
+        {
             this.maxLongitudeField = value;
         }
     }
@@ -199,66 +238,82 @@ public partial class geoBox {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-public partial class linksType {
-    
+[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+public partial class linksType
+{
+
     private string keyField;
-    
+
     private System.DateTime updatedField;
-    
+
     private string titleField;
-    
+
     private string summaryField;
-    
+
     private linkType[] linkField;
-    
+
     /// <remarks/>
-    public string key {
-        get {
+    public string key
+    {
+        get
+        {
             return this.keyField;
         }
-        set {
+        set
+        {
             this.keyField = value;
         }
     }
-    
+
     /// <remarks/>
-    public System.DateTime updated {
-        get {
+    public System.DateTime updated
+    {
+        get
+        {
             return this.updatedField;
         }
-        set {
+        set
+        {
             this.updatedField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string title {
-        get {
+    public string title
+    {
+        get
+        {
             return this.titleField;
         }
-        set {
+        set
+        {
             this.titleField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string summary {
-        get {
+    public string summary
+    {
+        get
+        {
             return this.summaryField;
         }
-        set {
+        set
+        {
             this.summaryField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("link")]
-    public linkType[] link {
-        get {
+    public linkType[] link
+    {
+        get
+        {
             return this.linkField;
         }
-        set {
+        set
+        {
             this.linkField = value;
         }
     }
@@ -269,29 +324,36 @@ public partial class linksType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-public partial class parameterLinksType : linksType {
-    
+[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+public partial class parameterLinksType : linksType
+{
+
     private string unitField;
-    
+
     private geoBox geoBoxField;
-    
+
     /// <remarks/>
-    public string unit {
-        get {
+    public string unit
+    {
+        get
+        {
             return this.unitField;
         }
-        set {
+        set
+        {
             this.unitField = value;
         }
     }
-    
+
     /// <remarks/>
-    public geoBox geoBox {
-        get {
+    public geoBox geoBox
+    {
+        get
+        {
             return this.geoBoxField;
         }
-        set {
+        set
+        {
             this.geoBoxField = value;
         }
     }
@@ -302,17 +364,21 @@ public partial class parameterLinksType : linksType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-public partial class geoLinksType : linksType {
-    
+[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+public partial class geoLinksType : linksType
+{
+
     private geoBox geoBoxField;
-    
+
     /// <remarks/>
-    public geoBox geoBox {
-        get {
+    public geoBox geoBox
+    {
+        get
+        {
             return this.geoBoxField;
         }
-        set {
+        set
+        {
             this.geoBoxField = value;
         }
     }
@@ -323,80 +389,99 @@ public partial class geoLinksType : linksType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd", IsNullable=false)]
-public partial class category {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd", IsNullable = false)]
+public partial class category
+{
+
     private string keyField;
-    
+
     private System.DateTime updatedField;
-    
+
     private string titleField;
-    
+
     private string summaryField;
-    
+
     private linkType[] linkField;
-    
+
     private linksType[] versionField;
-    
+
     /// <remarks/>
-    public string key {
-        get {
+    public string key
+    {
+        get
+        {
             return this.keyField;
         }
-        set {
+        set
+        {
             this.keyField = value;
         }
     }
-    
+
     /// <remarks/>
-    public System.DateTime updated {
-        get {
+    public System.DateTime updated
+    {
+        get
+        {
             return this.updatedField;
         }
-        set {
+        set
+        {
             this.updatedField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string title {
-        get {
+    public string title
+    {
+        get
+        {
             return this.titleField;
         }
-        set {
+        set
+        {
             this.titleField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string summary {
-        get {
+    public string summary
+    {
+        get
+        {
             return this.summaryField;
         }
-        set {
+        set
+        {
             this.summaryField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("link")]
-    public linkType[] link {
-        get {
+    public linkType[] link
+    {
+        get
+        {
             return this.linkField;
         }
-        set {
+        set
+        {
             this.linkField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("version")]
-    public linksType[] version {
-        get {
+    public linksType[] version
+    {
+        get
+        {
             return this.versionField;
         }
-        set {
+        set
+        {
             this.versionField = value;
         }
     }
@@ -407,80 +492,99 @@ public partial class category {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://opendata.smhi.se/xsd/portal.xsd")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="https://opendata.smhi.se/xsd/portal.xsd", IsNullable=false)]
-public partial class version {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "https://opendata.smhi.se/xsd/portal.xsd")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "https://opendata.smhi.se/xsd/portal.xsd", IsNullable = false)]
+public partial class version
+{
+
     private string keyField;
-    
+
     private System.DateTime updatedField;
-    
+
     private string titleField;
-    
+
     private string summaryField;
-    
+
     private linkType[] linkField;
-    
+
     private linksType[] resourceField;
-    
+
     /// <remarks/>
-    public string key {
-        get {
+    public string key
+    {
+        get
+        {
             return this.keyField;
         }
-        set {
+        set
+        {
             this.keyField = value;
         }
     }
-    
+
     /// <remarks/>
-    public System.DateTime updated {
-        get {
+    public System.DateTime updated
+    {
+        get
+        {
             return this.updatedField;
         }
-        set {
+        set
+        {
             this.updatedField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string title {
-        get {
+    public string title
+    {
+        get
+        {
             return this.titleField;
         }
-        set {
+        set
+        {
             this.titleField = value;
         }
     }
-    
+
     /// <remarks/>
-    public string summary {
-        get {
+    public string summary
+    {
+        get
+        {
             return this.summaryField;
         }
-        set {
+        set
+        {
             this.summaryField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("link")]
-    public linkType[] link {
-        get {
+    public linkType[] link
+    {
+        get
+        {
             return this.linkField;
         }
-        set {
+        set
+        {
             this.linkField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("resource")]
-    public linksType[] resource {
-        get {
+    public linksType[] resource
+    {
+        get
+        {
             return this.resourceField;
         }
-        set {
+        set
+        {
             this.resourceField = value;
         }
     }
