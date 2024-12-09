@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ocobs="https://opendata.smhi.se/xsd/ocobs_v1.xsd" xmlns:portal="https://opendata.smhi.se/xsd/portal.xsd" targetNamespace="https://opendata.smhi.se/xsd/ocobs_v1.xsd" elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <xs:import namespace="https://opendata.smhi.se/xsd/portal.xsd" schemaLocation="https://opendata.smhi.se/xsd/portal.xsd" />
+
+  <!-- OCOBS PARAMETER -->
+  <xs:element name="ocObsParameter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="summary" type="xs:string" />
+        <xs:element name="unit" type="xs:string" />
+        <xs:element name="link" type="portal:linkType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="stationSet" type="portal:linksType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="station" type="portal:linksType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- OCOBS STATION -->
+  <xs:element name="ocObsStation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int" />
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="latitude" type="xs:double" nillable="true" />
+        <xs:element name="longitude" type="xs:double" nillable="true" />
+        <xs:element name="active" type="xs:boolean" />
+        <xs:element name="from" type="xs:dateTime" />
+        <xs:element name="to" type="xs:dateTime" />
+        <xs:element name="mobile" type="xs:boolean" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="summary" type="xs:string" />
+        <xs:element name="link" type="portal:linkType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="period" type="portal:linksType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- OCOBS STATION LINKS TYPE -->
+  <xs:complexType name="ocObsStationLinksType">
+    <xs:complexContent>
+      <xs:extension base="portal:linksType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="latitude" type="xs:double" nillable="true" />
+          <xs:element name="longitude" type="xs:double" nillable="true" />
+          <xs:element name="active" type="xs:boolean" />
+          <xs:element name="from" type="xs:dateTime" />
+          <xs:element name="to" type="xs:dateTime" />
+          <xs:element name="mobile" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- OCOBS STATION SET -->
+  <xs:element name="ocObsStationSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="summary" type="xs:string" />
+        <xs:element name="link" type="portal:linkType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="period" type="portal:linksType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- OCOBS PERIOD -->
+  <xs:element name="ocObsPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="summary" type="xs:string" />
+        <xs:element name="link" type="portal:linkType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="data" type="portal:linksType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="ocObsPosition">
+    <xs:sequence>
+      <xs:element name="from" type="xs:dateTime" />
+      <xs:element name="to" type="xs:dateTime" />
+      <xs:element name="latitude" type="xs:double" />
+      <xs:element name="longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ocObsData">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ocobs:ocObsDataType">
+          <xs:sequence>
+            <xs:element name="value" type="ocobs:ocObsValueType" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- OCOBS DATA -->
+  <xs:complexType name="ocObsDataType">
+    <xs:sequence>
+      <xs:element name="updated" type="xs:dateTime" />
+      <xs:element name="parameter">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" type="xs:string" />
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="unit" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="station">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" type="xs:string" />
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="owner" type="xs:string" />
+            <!-- xs:element name="latitude" type="xs:double" /> <xs:element name="longitude" type="xs:double" / -->
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="period">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" type="xs:string" />
+            <xs:element name="from" type="xs:dateTime" />
+            <xs:element name="to" type="xs:dateTime" />
+            <xs:element name="summary" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="position" type="ocobs:ocObsPosition" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="link" type="portal:linkType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- OCOBS VALUE -->
+  <xs:complexType name="ocObsValueType">
+    <xs:sequence>
+      <xs:element name="date" type="xs:dateTime" />
+      <xs:element name="value" type="xs:double" />
+      <xs:element name="quality" type="xs:string" />
+      <xs:element name="depth" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- OCOBS STATION SET DATA -->
+  <xs:complexType name="ocObsStationSetDataType">
+    <xs:sequence>
+      <xs:element name="updated" type="xs:dateTime" />
+      <xs:element name="parameter">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" type="xs:string" />
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="unit" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="period">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" type="xs:string" />
+            <xs:element name="from" type="xs:dateTime" />
+            <xs:element name="to" type="xs:dateTime" />
+            <xs:element name="summary" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="link" type="portal:linkType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ocObsStationSetData">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ocobs:ocObsStationSetDataType">
+          <xs:sequence>
+            <xs:element name="station" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="key" type="xs:string" />
+                  <xs:element name="name" type="xs:string" />
+                  <xs:element name="owner" type="xs:string" />
+                  <xs:element name="from" type="xs:dateTime" />
+                  <xs:element name="to" type="xs:dateTime" />
+                  <xs:element name="latitude" type="xs:double" />
+                  <xs:element name="longitude" type="xs:double" />
+                  <xs:element name="value" type="ocobs:ocObsValueType" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
