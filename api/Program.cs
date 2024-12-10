@@ -5,9 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<SmhiService>();
 builder.Services.AddHttpClient<SmhiService>();
 
-builder.Services.AddSwaggerGen();
-
 builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
