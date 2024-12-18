@@ -1,4 +1,3 @@
-// NavigationButtons.jsx
 import React from "react";
 
 const NavigationButtons = ({ nextItem, previousItem, currentIndex, dataLength }) => {
