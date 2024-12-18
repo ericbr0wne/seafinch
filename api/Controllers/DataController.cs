@@ -1,12 +1,14 @@
 using api.Services;
+using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace api.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class SmhiController : ControllerBase
     {
-
         private readonly SmhiService _smhiService;
 
         public SmhiController(SmhiService smhiService)
@@ -19,9 +21,9 @@ namespace api.Controllers
         {
             try
             {
-                // Get the data from the service
-                var data = await _smhiService.GetDataAsync();
-                return Ok(data); // Return the data as JSON
+                var valueDtos = await _smhiService.GetValueDtosAsync();
+
+                return Ok(valueDtos);
             }
             catch (Exception ex)
             {
@@ -29,5 +31,4 @@ namespace api.Controllers
             }
         }
     }
-
 }

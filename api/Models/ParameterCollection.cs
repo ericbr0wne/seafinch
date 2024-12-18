@@ -3,6 +3,16 @@ using System.Collections.Generic;
 
 namespace api.Models
 {
+    public class SmhiResponse
+    {
+        public long Updated { get; set; }
+        public Parameter Parameter { get; set; }
+        public Station Station { get; set; }
+        public Period Period { get; set; }
+        public List<Position> Position { get; set; }
+        public List<Link> Link { get; set; }
+        public List<Value> value { get; set; }
+    }
     public class Parameter
     {
         public string Key { get; set; }
@@ -49,15 +59,4 @@ namespace api.Models
         public string Depth { get; set; }
     }
 
-    // Represents the full SmhiResponse in the JSON
-    public class SmhiResponse
-    {
-        public long Updated { get; set; }
-        public Parameter Parameter { get; set; }
-        public Station Station { get; set; }
-        public Period Period { get; set; }
-        public List<Position> Position { get; set; }
-        public List<Link> Link { get; set; }
-        public List<Value> value { get; set; }
-    }
 }

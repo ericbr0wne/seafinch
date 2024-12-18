@@ -1,9 +1,8 @@
 using api.Models;
-using Microsoft.AspNetCore.Mvc;
+using api.DTOs;
+using api.Mappers;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
+
 
 namespace api.Services
 {
@@ -16,7 +15,7 @@ namespace api.Services
             _httpClient = httpClient;
         }
 
-        public async Task<SmhiResponse> GetDataAsync()
+        public async Task<List<ValueDto>> GetValueDtosAsync()
         {
             var url = "https://opendata-download-ocobs.smhi.se/api/version/1.0/parameter/3/station/33106/period/latest-day/data.json";
 
@@ -25,10 +24,9 @@ namespace api.Services
             response.EnsureSuccessStatusCode();
 
             var json = await response.Content.ReadAsStringAsync();
-            var data = JsonConvert.DeserializeObject<SmhiResponse>(json);
+            var smhiResponse = JsonConvert.DeserializeObject<SmhiResponse>(json);
 
-            return data;
+            return ValueMapper.MapToDto(smhiResponse);
         }
     }
-
 }
