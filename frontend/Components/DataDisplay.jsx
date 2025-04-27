@@ -1,14 +1,16 @@
-// DataDisplay.jsx
 import React from "react";
 
 const DataDisplay = ({ item }) => {
+  const formattedDate = new Date(item.date).toLocaleString();
+  
   return (
     <div>
-      <p>{item.name}</p>
-      <p>{item.value} {item.unit}</p>
+      <p>Current speed: {item.value} {item.unit}</p>
+      <p>Quality: {item.quality}</p>
+      <p>Depth: {item.depth} m</p>
       <p>{item.stationName}</p>
       <p>{item.position}</p>
-      <p>{item.date}</p>
+      <p>{formattedDate}</p>
     </div>
   );
 };

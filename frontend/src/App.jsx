@@ -34,19 +34,22 @@ const SmhiData = () => {
 
   const currentItem = data[currentIndex];
 
-  return (
-    <div>
-      <h1>Seafinch</h1>
-      <FishAnimation currentSpeed={currentItem.value} />
-      <DataDisplay item={currentItem} />
-      <NavigationButtons
-        nextItem={nextItem}
-        previousItem={previousItem}
-        currentIndex={currentIndex}
-        dataLength={data.length}
-      />
-    </div>
-  );
+return (
+  <div>
+  <>
+  <h1>Seafinch</h1>
+  <h2>Real-time Ocean Current Visualization</h2>
+</>
+    <FishAnimation currentSpeed={currentItem.value} />
+    <DataDisplay item={currentItem} />
+    <NavigationButtons
+      nextItem={nextItem}
+      previousItem={previousItem}
+      currentIndex={currentIndex}
+      dataLength={data.length}
+    />
+  </div>
+);
 };
 
 export default SmhiData;

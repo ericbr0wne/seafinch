@@ -27,31 +27,31 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Centers the content horizontally */
-  align-items: center; /* Centers the content vertically */
+  justify-content: center; 
+  align-items: center; 
   min-width: 320px;
   min-height: 100vh;
   background-color: #242424;
-  color: rgba(255, 255, 255, 0.87); /* Ensures text color stands out */
-  font-family: 'Inter', sans-serif; /* Keeps a clean font */
-  overflow-x: hidden; /* Prevents horizontal scrollbar */
+  color: rgba(255, 255, 255, 0.87); 
+  font-family: 'Inter', sans-serif; 
+  overflow-x: hidden;
 }
 
 h1 {
-  font-size: 3.5em; /* Slightly larger font for better impact */
-  font-weight: 700; /* Bolder font weight for emphasis */
-  text-align: center; /* Ensures the text is centered */
+  font-size: 3.5em; 
+  font-weight: 700; 
+  text-align: center; 
   line-height: 1.2;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Adds a cool shadow effect to text */
-  margin-bottom: 20px; /* Adds space below the heading */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+  margin-bottom: 20px; 
 }
 
 h2, p {
   text-align: center;
-  font-size: 1.2em; /* Slightly larger than normal text */
+  font-size: 1.2em; 
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.87); /* Ensures visibility against dark background */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Adds shadow to paragraphs */
+  color: rgba(255, 255, 255, 0.87); 
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
   margin: 10px;
 }
 
@@ -66,7 +66,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   color: #fff;
-  margin-top: 20px; /* Adds space above the button */
+  margin-top: 20px; 
 }
 
 button + button {
@@ -94,11 +94,12 @@ button:focus-visible {
 
   button {
     background-color: #f9f9f9;
-    border: 1px solid #646cff; /* Light border color */
+    border: 1px solid #646cff; 
   }
 
   h1, h2, p {
     color: #213547;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for light mode */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
   }
+  
 }
