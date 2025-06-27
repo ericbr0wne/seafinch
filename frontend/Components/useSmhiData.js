@@ -5,7 +5,7 @@ const useSmhiData = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5025/api/smhi/data")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/smhi/data`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error fetching data");
