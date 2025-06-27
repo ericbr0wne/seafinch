@@ -31,6 +31,10 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
 
+app.UseStaticFiles();
+
 app.MapControllers();
+
+app.MapFallbackToFile("index.html");
 
 app.Run();
