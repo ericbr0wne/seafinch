@@ -38,7 +38,7 @@ return (
   <div>
   <>
   <h1>Seafinch</h1>
-  <h2>Real-time Ocean Current Visualization</h2>
+  <h2>Real-time Ocean Current</h2>
 </>
     <FishAnimation currentSpeed={currentItem.value} />
     <DataDisplay item={currentItem} />
