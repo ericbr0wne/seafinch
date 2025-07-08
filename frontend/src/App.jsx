@@ -37,8 +37,7 @@ const SmhiData = () => {
 return (
   <div>
     <h1>Seafinch</h1>
-    <h2>Real-time Ocean Current</h2>
-    <p>This data comes from SMHI's open API, showing real-time ocean current measurements from monitoring station in the Baltic Sea.</p>
+    <h2>This data comes from SMHI's open API, showing real-time ocean current measurements from monitoring station in the Baltic Sea.</h2>
     <FishAnimation currentSpeed={currentItem.value} />
     <DataDisplay item={currentItem} />
     <NavigationButtons
