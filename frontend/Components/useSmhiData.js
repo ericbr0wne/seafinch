@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import '../Styles/seafinch.css';
 
 const useSmhiData = () => {
   const [data, setData] = useState([]);
