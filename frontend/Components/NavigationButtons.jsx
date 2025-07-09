@@ -2,15 +2,7 @@ import React from "react";
 
 const NavigationButtons = ({ nextItem, previousItem, currentIndex, dataLength }) => {
   return (
-    <div 
-      className="navigation-buttons" 
-      style={{ 
-        display: "flex", 
-        justifyContent: "center", 
-        width: "100%", 
-        margin: "0 auto" 
-      }}
-    >
+    <div className="navigation-buttons">
       <button onClick={previousItem} disabled={currentIndex === 0}>
         Previous
       </button>

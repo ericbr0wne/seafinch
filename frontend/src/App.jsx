@@ -3,6 +3,7 @@ import FishAnimation from "../Components/FishAnimation";
 import useSmhiData from "../Components/useSmhiData";
 import DataDisplay from "../Components/DataDisplay";
 import NavigationButtons from "../Components/NavigationButtons";
+import "./App.css";
 
 const SmhiData = () => {
   const { data, error } = useSmhiData();
@@ -39,16 +40,19 @@ return (
     <h1>Seafinch</h1>
     <h2>Real-time Ocean Current</h2>
     <p>This data comes from SMHI's open API, showing real-time ocean current measurements from monitoring station in the Baltic Sea.</p>
-    <p>Each hour contains measurements at depths from 1m to 12m. Use the navigation buttons to browse through the data.</p>
+    <p>Each hour contains measurements at depths from 1m to 12m.</p>
+    <p>Use the navigation buttons to browse through the data.</p>
+    <div className="infobox">
     <FishAnimation currentSpeed={currentItem.value} />
     <DataDisplay item={currentItem} />
     <NavigationButtons
-      nextItem={nextItem}
-      previousItem={previousItem}
-      currentIndex={currentIndex}
-      dataLength={data.length}
+    nextItem={nextItem}
+    previousItem={previousItem}
+    currentIndex={currentIndex}
+    dataLength={data.length}
     />
-  </div>
+    </div>
+</div>
 );
 };
 
