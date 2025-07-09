@@ -37,8 +37,8 @@ const SmhiData = () => {
 
 return (
   <div>
-    <h1>Seafinch</h1>
-    <h2>Real-time Ocean Current</h2>
+    <h1>SeaFinch</h1>
+    <h2>Sea Current Tracker</h2>
     <p>This data comes from SMHI's open API, showing real-time ocean current measurements from monitoring station in the Baltic Sea.</p>
     <p>Each hour contains measurements at depths from 1m to 12m.</p>
     <p>Use the navigation buttons to browse through the data.</p>
