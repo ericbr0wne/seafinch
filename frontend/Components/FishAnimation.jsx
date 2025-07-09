@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import FishSVG from "../Components/FishSVG"; 
 
 const FishAnimation = ({ currentSpeed }) => {
@@ -8,17 +8,37 @@ const FishAnimation = ({ currentSpeed }) => {
         setAnimationSpeed(currentSpeed ? 100 / currentSpeed : 10);
     }, [currentSpeed]);
 
-    console.log("Current animation speed:", animationSpeed);
+    const fishData = useMemo(() => {
+        const fish = [];
+        for (let i = 0; i < 10; i++) {
+            fish.push({
+                id: i,
+                topPosition: Math.random() * 80 + 10, // Random between 10% and 90%
+                delay: (i * 2) + Math.random() * 3, // Stagger starts every 2-5 seconds
+                scale: Math.random() * 0.8 + 0.4, // Random scale between 0.4 and 1.2
+                speedVariation: Math.random() * 0.6 + 0.7, // Random speed multiplier between 0.7 and 1.3
+            });
+        }
+        return fish;
+    }, []);
 
     return (
-        <div
-            className="fish-container"
-            style={{
-                "--animation-speed": `${animationSpeed}s`, 
-            }}
-        >
-            <FishSVG />
-        </div>
+        <>
+            {fishData.map((fish) => (
+                <div
+                    key={fish.id}
+                    className="fish-container"
+                    style={{
+                        top: `${fish.topPosition}%`,
+                        "--animation-speed": `${animationSpeed * fish.speedVariation}s`,
+                        animationDelay: `${fish.delay}s`,
+                        transform: `scale(${fish.scale})`
+                    }}
+                >
+                    <FishSVG />
+                </div>
+            ))}
+        </>
     );
 };
 

@@ -4,10 +4,9 @@ body {
 
 .fish-container {
     position: fixed; 
-    top: 20%;
     left: 0;
-    transform: translateY(50%); 
-  }
+    pointer-events: none;
+}
 .fish {
     position: fixed;
     width: 235px;
@@ -17,10 +16,10 @@ body {
 
 @keyframes swim {
     0% {
-        transform: translateX(-235px);
+        left: -300px;
     }
     100% {
-        transform: translateX(100vw);
+        left: calc(100vw + 1600px);
     }
 }
 
