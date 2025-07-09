@@ -8,3 +8,5 @@ https://seafinch-ajc0cnbth2gnaff7.swedencentral-01.azurewebsites.net/
 - Backend: C# ASP.NET Core
 - Frontend: React + CSS
 - Data: SMHI Open Data API
+- Deployed with GitHub Actions
+- Hosted on Azure App Service
