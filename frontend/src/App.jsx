@@ -35,23 +35,13 @@ const SmhiData = () => {
   const currentItem = data[currentIndex];
 
 return (
-  <div className="seafinch-container">
-    <div className="header-section">
-      <h1>Seafinch</h1>
-      <h2>Real-time Ocean Current</h2>
-    </div>
-    
-    <div className="info-section">
-      <p>This data comes from SMHI's open API, showing real-time ocean current measurements from monitoring station in the Baltic Sea.</p>
-      <p>Each hour contains measurements at depths from 1m to 12m. Use the navigation buttons to browse through the data.</p>
-    </div>
-    
-    <div className="fish-animation-container">
-      <FishAnimation currentSpeed={currentItem.value} />
-    </div>
-    
+  <div>
+    <h1>Seafinch</h1>
+    <h2>Real-time Ocean Current</h2>
+    <p>This data comes from SMHI's open API, showing real-time ocean current measurements from monitoring station in the Baltic Sea.</p>
+    <p>Each hour contains measurements at depths from 1m to 12m. Use the navigation buttons to browse through the data.</p>
+    <FishAnimation currentSpeed={currentItem.value} />
     <DataDisplay item={currentItem} />
-    
     <NavigationButtons
       nextItem={nextItem}
       previousItem={previousItem}

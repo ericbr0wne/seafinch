@@ -5,182 +5,46 @@
   text-align: center;
 }
 
-.seafinch-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.header-section {
-  background: linear-gradient(135deg, #0a4a5c 0%, #1e8b9a 100%);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(79, 209, 199, 0.2);
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.header-section h1 {
-  margin: 0 0 0.5rem 0;
-  color: white;
-  font-size: 3rem;
-  font-weight: 700;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-.header-section h2 {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.4rem;
-  font-weight: 400;
+.card {
+  padding: 2em;
 }
 
-.info-section {
-  background: rgba(45, 55, 72, 0.6);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border: 1px solid rgba(79, 209, 199, 0.15);
-  backdrop-filter: blur(10px);
-}
-
-.info-section p {
-  margin: 0.5rem 0;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-}
-
-.fish-animation-container {
-  margin: 2rem 0;
-  padding: 1rem;
-  background: rgba(10, 74, 92, 0.1);
-  border-radius: 12px;
-  border: 1px solid rgba(79, 209, 199, 0.1);
-}
-
-.data-display-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.data-card {
-  background: rgba(45, 55, 72, 0.8);
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid rgba(79, 209, 199, 0.2);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-}
-
-.data-card.primary-data {
-  background: linear-gradient(135deg, rgba(10, 74, 92, 0.8) 0%, rgba(30, 139, 154, 0.6) 100%);
-  border: 1px solid rgba(79, 209, 199, 0.3);
-}
-
-.data-card.station-info {
-  background: rgba(45, 55, 72, 0.6);
-}
-
-.data-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5rem 0;
-}
-
-.data-item.main-value {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(79, 209, 199, 0.2);
-}
-
-.data-item.main-value .value {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #4fd1c7;
-}
-
-.data-row {
-  display: flex;
-  gap: 1rem;
-}
-
-.data-row .data-item {
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
-}
-
-.label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.value {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
+.read-the-docs {
+  color: #888;
 }
 
 .navigation-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-  padding: 1rem;
-  background: rgba(45, 55, 72, 0.4);
-  border-radius: 12px;
-  border: 1px solid rgba(79, 209, 199, 0.1);
-}
-
-.navigation-buttons button {
-  background: linear-gradient(135deg, #0a4a5c 0%, #1e8b9a 100%);
-  border: 1px solid rgba(79, 209, 199, 0.3);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navigation-buttons button:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1e8b9a 0%, #4fd1c7 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(79, 209, 199, 0.3);
-}
-
-.navigation-buttons button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-@media (max-width: 768px) {
-  .data-display-container {
-    gap: 0.75rem;
-  }
-  
-  .data-row {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .data-row .data-item {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .header-section h1 {
-    font-size: 2.5rem;
-  }
-  
-  .navigation-buttons {
-    gap: 0.5rem;
-  }
+  width: 100%;
+  margin: 0 auto;  
+  text-align: center;  
 }
