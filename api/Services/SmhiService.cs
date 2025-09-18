@@ -17,7 +17,7 @@ namespace api.Services
 
         public async Task<List<ValueDto>> GetValueDtosAsync()
         {
-            var url = "https://opendata-download-ocobs.smhi.se/api/version/1.0/parameter/3/station/33106/period/latest-day/data.json";
+            var url = "https://opendata-download-ocobs.smhi.se/api/version/1.0/parameter/3/station/33026/period/latest-day/data.json";
 
             var response = await _httpClient.GetAsync(url);
 

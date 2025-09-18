@@ -1,0 +1,8 @@
+{
+  "name": "seafinch",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build:azure && cd ../api && dotnet publish -c Release -o ./publish",
+    "start": "cd api && dotnet run"
+  }
+}
