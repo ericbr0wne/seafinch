@@ -40,7 +40,7 @@ return (
     <h1>SeaFinch</h1>
     <h2>Real-time Ocean Data</h2>
     <p>This data comes from SMHI's open API, showing real-time ocean current measurements from monitoring station in the Baltic Sea.</p>
-    <p>Each hour contains measurements at depths from 1m to 12m.</p>
+    <p>Each hour contains measurements at different depths.</p>
     <p>Use the navigation buttons to browse through the data.</p>
     <div className="infobox">
     <FishAnimation currentSpeed={currentItem.value} />
